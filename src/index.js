@@ -42,8 +42,41 @@ function appMenu() {
             return 'Please enter at least one character.';
           },
         },
+        {
+          type: 'input',
+          name: 'managerID',
+          message: "What is the team manager's ID?",
+          validate: (answer) => {
+            if (answer !== '') {
+              return true;
+            }
+            return 'Please enter at least one character.';
+          },
+        },
+        {
+          type: 'input',
+          name: 'managerEmail',
+          message: "What is your manager's Email?",
+          validate: (answer) => {
+            if (answer !== '') {
+              return true;
+            }
+            return 'Please enter at least one character.'
+          },
+        },
+        {
+          type: 'input',
+          name: 'managerOfficeNumber',
+          message: "What is your manager's office number?",
+          validate: (answer) => {
+            if (answer !== ''){
+              return true;
+            }
+            return 'Please enter at least one character.'
+          },
+        },
         //
-        // TODO: YOUR CODE HERE:
+        // T*ODO: YOUR CODE HERE:
         // CREATE REST OF QUESTIONS HERE FOR MANAGER
         // Strongly recommend to add validate property function for id and email
         //
@@ -92,35 +125,138 @@ function appMenu() {
   function addEngineer() {
     inquirer
       .prompt([
+        {
+          type: 'input',
+          name: 'engineerName',
+          message: "What is your engineer's name?",
+          validate: (answer) => {
+            if (answer !== ''){
+              return true;
+            }
+            return "Please enter atleast one character." 
+          }
+        },
+        {
+          type: 'input',
+          name: 'engineerID',
+          message: "What is your engineer's ID number?",
+          validate: (answer) => {
+            if(answer !== ''){
+              return true;
+            }
+            return "Please enter atleast one character."
+          }
+        },
+        {
+          type: 'input',
+          name: 'engineerEmail',
+          message: "What is your engineer's Email?",
+          validate: (answer) => {
+            if(answer !== ''){
+              return true;
+            }
+            return "Please enter atleast one character."
+          }
+        },
+        {
+          type: 'input',
+          name: 'engineerGitHub',
+          message: "What is your engineer's GitHub?",
+          validate: (answer) => {
+            if (answer !== ''){
+              return true;
+            }
+            return "Please enter atleast one character."
+          }
+        },
         //
-        // TODO: YOUR CODE HERE
+        // T*ODO: YOUR CODE HERE
         // CREATE OBJECTS OF QUESTIONS FOR ENGINEER
         //
       ])
       .then((answers) => {
+        const engineer = new Engineer(
+          answers.engineerName,
+          answers.engineerId,
+          answers.engineerEmail,
+          answers.engineerGitHub,
+        );
+        teamMembers.push(engineer);
+        idArray.push(answers.engineerId);
+        createTeam();
+      });
         //
-        // TODO: YOUR CYOUR CODE HERE
+        // T*ODO: YOUR CYOUR CODE HERE
         // 1. CREATE A VARIABLE TO STORE THE ENGINEER OBJECT INSTANTIATED WITH THE ENGINEER CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS
         //    TO THE ENGINEER CLASS CONSTRUCTOR
         // 2. ADD (PUSH) THE ENGINEER VARIABLE TO the teamMembers ARRAY
         // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
         //
-
-        createTeam();
-      });
   }
 
   function addIntern() {
     inquirer
       .prompt([
+        {
+          type: 'input',
+          name: 'internName',
+          message: "What is your intern's name?",
+          validate: (answer) => {
+            if (answer !== ''){
+              return true;
+            }
+            return "Please enter atleast one character." 
+          }
+        },
+        {
+          type: 'input',
+          name: 'internID',
+          message: "What is your intern's ID number?",
+          validate: (answer) => {
+            if(answer !== ''){
+              return true;
+            }
+            return "Please enter atleast one character."
+          }
+        },
+        {
+          type: 'input',
+          name: 'internEmail',
+          message: "What is your intern's Email?",
+          validate: (answer) => {
+            if(answer !== ''){
+              return true;
+            }
+            return "Please enter atleast one character."
+          }
+        },
+        {
+          type: 'input',
+          name: 'internSchool',
+          message: "What is your intern's school?",
+          validate: (answer) => {
+            if (answer !== ''){
+              return true;
+            }
+            return "Please enter atleast one character."
+          }
+        },
         //
-        // TODO: YOUR CODE HERE
+        // T*ODO: YOUR CODE HERE
         // CREATE OBJECTS OF QUESTIONS FOR INTERN
         //
       ])
       .then((answers) => {
+        const intern = new Intern(
+          answers.internName,
+          answers.internId,
+          answers.internEmail,
+          answers.internSchool,
+        );
+        teamMembers.push(intern);
+        idArray.push(answers.internId);
         //
-        // TODO: YOUR CODE HERE
+        // T*ODO: YOUR CODE HERE
         // 1. CREATE A VARIABLE TO STORE THE INTERN OBJECT INSTANTIATED WITH THE INTERN CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS
         //    TO THE INTERN CLASS CONSTRUCTOR
         // 2. ADD (PUSH) THE INTERN VARIABLE TO the teamMembers ARRAY
