@@ -66,7 +66,7 @@ function appMenu() {
         },
         {
           type: 'input',
-          name: 'managerOfficeNumber',
+          name: 'mnpm er',
           message: "What is your manager's office number?",
           validate: (answer) => {
             if (answer !== ''){
