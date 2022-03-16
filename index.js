@@ -42,7 +42,7 @@ function appMenu() {
         },
         {
           type: 'input',
-          name: 'managerID',
+          name: 'managerId',
           message: "What is the team manager's ID?",
           validate: (answer) => {
             if (answer !== '') {
@@ -64,7 +64,7 @@ function appMenu() {
         },
         {
           type: 'input',
-          name: 'mnpm er',
+          name: 'managerOfficeNumber',
           message: "What is your manager's office number?",
           validate: (answer) => {
             if (answer !== ''){
@@ -132,7 +132,7 @@ function appMenu() {
         },
         {
           type: 'input',
-          name: 'engineerID',
+          name: 'engineerId',
           message: "What is your engineer's ID number?",
           validate: (answer) => {
             if(answer !== ''){
@@ -193,7 +193,7 @@ function appMenu() {
         },
         {
           type: 'input',
-          name: 'internID',
+          name: 'internId',
           message: "What is your intern's ID number?",
           validate: (answer) => {
             if(answer !== ''){

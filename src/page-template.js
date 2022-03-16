@@ -16,7 +16,7 @@ const generateTeam = team => {
                 <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
             </ul>
         </div>
-    </div>
+        </div>
         `;
     };
 
@@ -26,16 +26,16 @@ const generateTeam = team => {
         <div class="card employee-card">
         <div class="card-header">
             <h2 class="card-title">${engineer.getName()}</h2>
-            <h3 class="card-title"><i class="fa-regular fa-code"></i>${engineer.getRole()}</h3>
+            <h3 class="card-title"><i class="fa-regular fa-glasses"></i>${engineer.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${engineer.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGitHub()}?tab=repositories">${engineer.getGitHub()}</li>
+                <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}?tab=repositories">${engineer.getGithub()}</a></li>
             </ul>
         </div>
-    </div>
+        </div>
         `;
 
     };
@@ -46,16 +46,16 @@ const generateTeam = team => {
         <div class="card employee-card">
         <div class="card-header">
             <h2 class="card-title">${intern.getName()}</h2>
-            <h3 class="card-title"><i class="fa-light fa-user-graduate"></i>${intern.getRole()}</h3>
+            <h3 class="card-title"><i class="fa-regular fa-user-graduate"></i>${intern.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${intern.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
-                <li class="list-group-item">Office number: ${intern.getSchool()}</li>
+                <li class="list-group-item">School: ${intern.getSchool()}</li>
             </ul>
         </div>
-    </div>
+        </div>
         `;
 
     };
