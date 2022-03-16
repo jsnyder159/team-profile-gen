@@ -22,7 +22,6 @@ const generateTeam = team => {
 
     // create the html for engineers
     const generateEngineer = engineer => {
-        // T*ODO: YOUR CODE HERE
         return `
         <div class="card employee-card">
         <div class="card-header">
@@ -43,7 +42,6 @@ const generateTeam = team => {
 
     // create the html for interns
     const generateIntern = intern => {
-        // T*ODO: YOUR CODE HERE
         return `
         <div class="card employee-card">
         <div class="card-header">
@@ -74,7 +72,6 @@ const generateTeam = team => {
 
     // ADD ENGINEERS TO ARRAY
     html.push(
-        // T*ODO: YOUR CODE HERE
         team
         .filter(employee => employee.getRole() === "Engineer" )
         .map(engineer => generateEngineer(engineer))
@@ -83,7 +80,6 @@ const generateTeam = team => {
 
     // ADD INTERNS TO ARRAY
     html.push(
-        // T*ODO: YOUR CODE HERE
         team
         .filter(employee => employee.getRole() === "Intern")
         .map(intern => generateIntern(intern))

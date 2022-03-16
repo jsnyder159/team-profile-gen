@@ -4,10 +4,8 @@ const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
-
 const DIST_DIR = path.resolve(__dirname, 'dist');
 const distPath = path.join(DIST_DIR, 'team.html');
-
 const render = require('./src/page-template.js');
 
 const teamMembers = [];
@@ -75,11 +73,7 @@ function appMenu() {
             return 'Please enter at least one character.'
           },
         },
-        //
-        // T*ODO: YOUR CODE HERE:
-        // CREATE REST OF QUESTIONS HERE FOR MANAGER
-        // Strongly recommend to add validate property function for id and email
-        //
+
       ])
       .then((answers) => {
         const manager = new Manager(
@@ -169,10 +163,6 @@ function appMenu() {
             return "Please enter atleast one character."
           }
         },
-        //
-        // T*ODO: YOUR CODE HERE
-        // CREATE OBJECTS OF QUESTIONS FOR ENGINEER
-        //
       ])
       .then((answers) => {
         const engineer = new Engineer(
@@ -185,13 +175,6 @@ function appMenu() {
         idArray.push(answers.engineerId);
         createTeam();
       });
-        //
-        // T*ODO: YOUR CYOUR CODE HERE
-        // 1. CREATE A VARIABLE TO STORE THE ENGINEER OBJECT INSTANTIATED WITH THE ENGINEER CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS
-        //    TO THE ENGINEER CLASS CONSTRUCTOR
-        // 2. ADD (PUSH) THE ENGINEER VARIABLE TO the teamMembers ARRAY
-        // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
-        //
   }
 
   function addIntern() {
@@ -241,10 +224,6 @@ function appMenu() {
             return "Please enter atleast one character."
           }
         },
-        //
-        // T*ODO: YOUR CODE HERE
-        // CREATE OBJECTS OF QUESTIONS FOR INTERN
-        //
       ])
       .then((answers) => {
         const intern = new Intern(
@@ -255,13 +234,6 @@ function appMenu() {
         );
         teamMembers.push(intern);
         idArray.push(answers.internId);
-        //
-        // T*ODO: YOUR CODE HERE
-        // 1. CREATE A VARIABLE TO STORE THE INTERN OBJECT INSTANTIATED WITH THE INTERN CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS
-        //    TO THE INTERN CLASS CONSTRUCTOR
-        // 2. ADD (PUSH) THE INTERN VARIABLE TO the teamMembers ARRAY
-        // 3. ADD (PUSH) THE INTERN ID TO THE idArray ARRAY
-        //
         createTeam();
       });
   }
@@ -273,7 +245,6 @@ function appMenu() {
     }
     fs.writeFileSync(distPath, render(teamMembers), 'utf-8');
   }
-
   createManager();
 }
 
